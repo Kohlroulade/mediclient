@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Tab, Tabs } from '@mui/material';
+import CreateItem from './components/CreateItem';
+import SearchItem from './components/SearchItem';
+import LaeuftAbSearch from './components/LäuftAbSearch';
+import { TabContext, TabList, TabPanel } from '@mui/lab';
+import React, { SyntheticEvent } from 'react';
+import DashBoard from './components/DashBoard';
 
 function App() {
+  const [value, setValue] = React.useState('1');
+  const handleChange = (event: SyntheticEvent, newValue: string) => { setValue(newValue); }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TabContext value={value}>
+      <TabList onChange={handleChange}>
+        <Tab label="Medikament eingeben" value="1"></Tab>
+        <Tab label="Medikament suchen" value="2"></Tab>
+        <Tab label="Dashboard" value="4"></Tab>
+      </TabList>
+      <TabPanel value="1"><CreateItem /></TabPanel>
+      <TabPanel value="2"><SearchItem /></TabPanel>
+      <TabPanel value="4"><DashBoard /></TabPanel>
+    </TabContext>
   );
 }
 
