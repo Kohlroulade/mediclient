@@ -1,7 +1,6 @@
-import { Checkbox, RadioGroup, FormControlLabel, Radio } from "@mui/material";
 import { BarChart, BarSeriesType } from "@mui/x-charts";
 import { MakeOptional } from "@mui/x-date-pickers/internals";
-import { FC, PropsWithChildren, useState } from "react";
+import { FC } from "react";
 
 type DashBoardModel = {
     data: MakeOptional<BarSeriesType, "type">[]

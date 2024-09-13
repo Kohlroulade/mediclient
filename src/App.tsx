@@ -1,8 +1,7 @@
 import './App.css';
-import { Tab, Tabs } from '@mui/material';
+import { Tab } from '@mui/material';
 import CreateItem from './components/CreateItem';
 import SearchItem from './components/SearchItem';
-import LaeuftAbSearch from './components/LäuftAbSearch';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import React, { SyntheticEvent } from 'react';
 import DashBoard from './components/DashBoard';
